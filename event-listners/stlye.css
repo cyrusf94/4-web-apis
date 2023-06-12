@@ -1,0 +1,13 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: bisque;
+}
+.challenge {
+    margin-top: 1em;
+    font-size: 2em;
+}
+
+.challenge, button {
+    margin: .5em;
+    font-size: 20px;
+}
