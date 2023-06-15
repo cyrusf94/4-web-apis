@@ -10,3 +10,8 @@ body {
 div {
     gap: 30px;
 }
+
+#search-container {
+    display: flex;
+    align-content: center;
+}

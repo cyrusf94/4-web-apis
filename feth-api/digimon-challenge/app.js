@@ -16,17 +16,29 @@
 */
 
 let url = "https://digimon-api.vercel.app/api/digimon";
-let container = document.getElementById('container')
+let container = document.getElementById('container');
+let digiName = document.getElementById('digi-search');
+let search = document.getElementById('search-container');
+
 
 
 async function getDigi () {
         let response = await fetch(url);
         let digi = await response.json();
-        createDiv(digi)
+        return digi;
         }
 
+search.addEventListener('submit', async evt => {
+        let digimon = await getDigi();
+        let found = digimon.filter(di => di.name === digiName);
+        console.log(found)
+        createDiv(found);
+})
 
 getDigi();
+
+
+
 
 let createDiv = function(digimon) {
     digimon.forEach(d => {
@@ -42,3 +54,4 @@ div.appendChild(img);
 container.appendChild(div);
 });
 }
+
